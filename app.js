@@ -38,6 +38,12 @@ app.use(express.static(path.join(__dirname,"public")));
 
 app.use(bodyParser.json());
 
+// passpoer Middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+require("./config/passport")(passport);
+
 app.use("/users",users);
 
 //initializing route with /
