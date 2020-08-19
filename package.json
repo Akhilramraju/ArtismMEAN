@@ -1,0 +1,30 @@
+{
+  "name": "artmean",
+  "version": "1.0.0",
+  "description": "This is a app for Artism, using MEAN stack!",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "*",
+    "mongoose": "*",
+    "bcryptjs": "*",
+    "cors": "*",
+    "jsonwebtoken": "",
+    "body-parser": "*",
+    "passport": "*",
+    "passport-jwt": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akhilramraju/artMEAN.git"
+  },
+  "author": "Akhil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Akhilramraju/artMEAN/issues"
+  },
+  "homepage": "https://github.com/Akhilramraju/artMEAN#readme"
+}
