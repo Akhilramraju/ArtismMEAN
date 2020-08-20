@@ -9,7 +9,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule,Routes } from '@angular/router';
-
+import { ValidateService } from  "./services/validate.service";
 
 const appRoutes: Routes = [
   {path:"",component: HomeComponent},
@@ -36,7 +36,7 @@ const appRoutes: Routes = [
     
     RouterModule.forRoot(appRoutes)
     ],
-  providers: [],
+  providers: [ValidateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from "src/app/model/user";
+import { ValidateService } from "src/app/services/validate.service";
 
 @Component({
   selector: 'app-register',
@@ -15,7 +16,7 @@ forms : FormGroup;
  email:String;
  password:string;
 
-  constructor() { }
+  constructor(private validateService: ValidateService) { }
 
   ngOnInit(): void {
   }
@@ -29,6 +30,19 @@ forms : FormGroup;
 
 
 
+    }
+
+    //Required Fields
+    if(!this.validateService.validateRegister(user)){
+      console.log("Fill all the fiends");  
+      return false;
+    }
+
+    //valudte email fids
+    if(!this.validateService.validateEmail(user.email)){
+
+      console.log("Validte emaail",user.email);  
+      return false;
     }
     console.log("Registration form submitted! ",this.name);
   }
