@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from "src/app/model/user";
 import { ValidateService } from "src/app/services/validate.service";
+import { FlashMessagesService } from "angular2-flash-messages";
 
 @Component({
   selector: 'app-register',
@@ -16,7 +17,7 @@ forms : FormGroup;
  email:String;
  password:string;
 
-  constructor(private validateService: ValidateService) { }
+  constructor(private validateService: ValidateService, private flashMessage:FlashMessagesService) { }
 
   ngOnInit(): void {
   }
@@ -35,13 +36,14 @@ forms : FormGroup;
     //Required Fields
     if(!this.validateService.validateRegister(user)){
       console.log("Fill all the fiends");  
+      this.flashMessage.show("Please fill all fields",{cssClass:"alert-danger,timeout:3000"})
       return false;
     }
 
     //valudte email fids
     if(!this.validateService.validateEmail(user.email)){
 
-      console.log("Validte emaail",user.email);  
+      this.flashMessage.show("Please Enter valid Email",{cssClass:"alert-danger,timeout:3000"})
       return false;
     }
     console.log("Registration form submitted! ",this.name);
