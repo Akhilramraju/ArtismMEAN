@@ -16,8 +16,8 @@ forms : FormGroup;
  username:String;
  email:String;
  password:string;
-
-  constructor(private validateService: ValidateService, private flashMessage:FlashMessagesService) { }
+//, private flashMessage:FlashMessagesService
+  constructor(private validateService: ValidateService) { }
 
   ngOnInit(): void {
   }
@@ -36,14 +36,14 @@ forms : FormGroup;
     //Required Fields
     if(!this.validateService.validateRegister(user)){
       console.log("Fill all the fiends");  
-      this.flashMessage.show("Please fill all fields",{cssClass:"alert-danger,timeout:3000"})
+      //this.flashMessage.show("Please fill all fields",{cssClass:"alert-danger,timeout:3000"})
       return false;
     }
 
     //valudte email fids
     if(!this.validateService.validateEmail(user.email)){
 
-      this.flashMessage.show("Please Enter valid Email",{cssClass:"alert-danger,timeout:3000"})
+     // this.flashMessage.show("Please Enter valid Email",{cssClass:"alert-danger,timeout:3000"})
       return false;
     }
     console.log("Registration form submitted! ",this.name);

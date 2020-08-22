@@ -10,7 +10,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule,Routes } from '@angular/router';
 import { ValidateService } from  "./services/validate.service";
-import { FlashMessagesModule } from "angular2-flash-messages";
+// import { FlashMessagesModule } from "angular2-flash-messages";
 import { from } from 'rxjs';
 
 const appRoutes: Routes = [
@@ -37,7 +37,7 @@ const appRoutes: Routes = [
     FormsModule,
     
     RouterModule.forRoot(appRoutes),
-    FlashMessagesModule
+   // FlashMessagesModule
     ],
   providers: [ValidateService],
   bootstrap: [AppComponent]
