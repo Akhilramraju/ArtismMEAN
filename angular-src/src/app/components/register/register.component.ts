@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from "src/app/model/user";
 import { ValidateService } from "src/app/services/validate.service";
+import { AuthService } from "src/app/services/auth.service";
 import { FlashMessagesService } from "angular2-flash-messages";
+import { subscribeOn } from 'rxjs/operators';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register',
@@ -17,7 +20,10 @@ forms : FormGroup;
  email:String;
  password:string;
 //, private flashMessage:FlashMessagesService
-  constructor(private validateService: ValidateService) { }
+  constructor(
+    private validateService: ValidateService, 
+    private authService: AuthService, 
+    private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -47,6 +53,22 @@ forms : FormGroup;
       return false;
     }
     console.log("Registration form submitted! ",this.name);
+    
+    // register user
+    this.authService.registerUser(user).subscribe(data => {
+      
+      console.log("name ::", user.name);
+      
+      if((data as any).success){
+        console.log( "register user success");
+      this.router.navigate(["/login"])      }
+      else {
+        console.log( "register user success");
+      this.router.navigate(["/register"])      }
+
+    });
+
   }
+
 
 }
