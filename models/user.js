@@ -47,11 +47,11 @@ module.exports.addUser = function(newUser,callback){
             else{
                 console.log("here 123");
             newUser.password = hash;
-            newUser.save();
+            newUser.save(callback);
         }
         });
     });
-
+return;
 }
 module.exports.comparePassword = function(candidatePassword, hash, callback){
     bcrypt.compare(candidatePassword, hash, (err, isMatch) => {
