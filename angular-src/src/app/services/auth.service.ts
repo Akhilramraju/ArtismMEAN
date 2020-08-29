@@ -27,12 +27,30 @@ export class AuthService {
     .pipe(map((res: HttpResponse<JSON>) => res));
 
   }
+  getProfile(){
+    
+    this.loadToken();
+    let headers = new HttpHeaders({"Content-Type":"application/json","Authorization":this.authToken});
+  //  headers.append("Authorization",this.authToken);
+   // headers.append("Content-Type","application/json");
+    console.log("haders : ",this.authToken);
+    return this.http.get("http://localhost:3000/users/profile",{headers:headers})
+    .pipe(map((res: HttpResponse<JSON>) => res));
+  }
   storeUserData(token, user){
+    console.log("store : ",token);
     localStorage.setItem("id_token",token);
     localStorage.setItem("user",JSON.stringify(user));
+    console.log("user : ",user);
     this.authToken = token;
     this.user = user;
   }
+  loadToken(){
+    const token = localStorage.getItem("id_token");
+    this.authToken = token;
+  }
+
+
   logout(){
     this.authToken = null;
     this.user = null;

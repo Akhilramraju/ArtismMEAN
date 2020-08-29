@@ -46,11 +46,11 @@ router.post("/authenticate", (req,res, next) =>{
             if(err) throw err;
     
             if(isMatch){
-                console.log("here");
+                
                 const token = jwt.sign({data:user}, config.secret, {
                     expiresIn: 604800 // 1 week 
                 });
-          
+                console.log("here token :",token);
                 res.json({
                     success: true,
                     token: "JWT "+token,
@@ -60,7 +60,9 @@ router.post("/authenticate", (req,res, next) =>{
                         username: user.username,
                         email: user.email            
                     }
+                  
                 });
+                console.log("returned");
             } else {
                 return res.json({success: false, msg:"Wrong password"});
             }
@@ -71,6 +73,7 @@ router.post("/authenticate", (req,res, next) =>{
 
 //Profile
 router.get("/profile", passport.authenticate("jwt",{session:false}), (req,res, next) =>{
+    console.log(" returning profile ");
     res.json({user: req.user});
 
 });
