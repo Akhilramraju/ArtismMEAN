@@ -1,3 +1,6 @@
+
+import { CommonModule } from '@angular/common';  
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -9,11 +12,18 @@ import { RegisterComponent } from './components/register/register.component';
 import {HttpClientModule} from "@angular/common/http";
 import { ProfileComponent } from './components/profile/profile.component';
 import { HomeComponent } from './components/home/home.component';
+import { JwtModule,JwtModuleOptions  } from '@auth0/angular-jwt';
 import { RouterModule,Routes } from '@angular/router';
 import { ValidateService } from  "./services/validate.service";
 import { AuthService } from  "./services/auth.service";
 // import { FlashMessagesModule } from "angular2-flash-messages";
 import {  } from 'rxjs';
+import { tokenName } from '@angular/compiler';
+const JWT_Module_Options: JwtModuleOptions = {
+  config: {
+    
+  }
+};
 
 const appRoutes: Routes = [
   {path:"",component: HomeComponent},
@@ -35,10 +45,11 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
-    
+    HttpClientModule, JwtModule.forRoot(JWT_Module_Options),
+
     RouterModule.forRoot(appRoutes),
    // FlashMessagesModule
     ],

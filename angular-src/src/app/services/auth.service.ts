@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders,HttpResponse} from "@angular/common/http";
 import {map} from 'rxjs/operators';
+import { JwtHelperService  } from '@auth0/angular-jwt';
 import { FlashMessagesService } from "angular2-flash-messages";
 import {Router} from "@angular/router";
 @Injectable({
@@ -10,7 +11,7 @@ export class AuthService {
  
   authToken: any;
   user: any;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private jwtHelper: JwtHelperService) { }
   registerUser(user){
 
     let headers = new HttpHeaders();
@@ -50,10 +51,20 @@ export class AuthService {
     this.authToken = token;
   }
 
-
-  logout(){
+ logout(){
     this.authToken = null;
     this.user = null;
     localStorage.clear();
   }
+
+  loggedIn(){
+
+    
+  const helper = new JwtHelperService();
+  console.log("logged in :",!helper.isTokenExpired(localStorage.id_token));  
+    return !helper.isTokenExpired(localStorage.id_token); // other people are putting 'id_token'' here but it didn't work for me so i just put the localStorage item
+    }
+   
+
+
 }
