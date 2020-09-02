@@ -16,6 +16,7 @@ import { JwtModule,JwtModuleOptions  } from '@auth0/angular-jwt';
 import { RouterModule,Routes } from '@angular/router';
 import { ValidateService } from  "./services/validate.service";
 import { AuthService } from  "./services/auth.service";
+import {AuthGuard} from "../app/guards/auth.guard";
 // import { FlashMessagesModule } from "angular2-flash-messages";
 import {  } from 'rxjs';
 import { tokenName } from '@angular/compiler';
@@ -29,7 +30,7 @@ const appRoutes: Routes = [
   {path:"",component: HomeComponent},
   {path:"register",component: RegisterComponent},
   {path:"login",component: LoginComponent},
-  {path:"profile",component: ProfileComponent}
+  {path:"profile",component: ProfileComponent,canActivate:[AuthGuard]}
   
 ]
 
@@ -53,7 +54,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
    // FlashMessagesModule
     ],
-  providers: [ValidateService,AuthService],
+  providers: [ValidateService,AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
