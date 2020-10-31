@@ -1,5 +1,7 @@
 
 <!--Here I need to add the arts-->
+<h1 mat-dialog-title>Hi </h1>
+<div mat-dialog-content>
 <div>
 <form [formGroup]="addArtForm" (ngSubmit)="submit()">
          
@@ -35,4 +37,10 @@
        
     <button class="btn btn-primary" type="submit">Submit</button>
 </form>
+
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+
 </div>

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import{ ART, ARTMEIDA} from 'src/app/model/arts'
 import { FormGroup, FormControl, Validators} from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 @Component({
   selector: 'app-add-art',
   templateUrl: './add-art.component.html',
@@ -8,7 +9,13 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
 })
 export class AddArtComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public dialogRef: MatDialogRef<AddArtComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: ART) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
   arts : ART []
   artsMedia : ARTMEIDA []
   images = [];

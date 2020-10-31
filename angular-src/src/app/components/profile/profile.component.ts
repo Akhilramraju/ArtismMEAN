@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild,ElementRef, AfterViewInit, OnDestroy, Inject } from '@angular/core';
 import { AuthService } from "src/app/services/auth.service";
 import { FlashMessagesService } from "angular2-flash-messages";
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 import {Router} from "@angular/router";
 import {ART} from 'src/app/model/arts';
@@ -10,6 +11,7 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import {NgbModal, ModalDismissReasons}  from '@ng-bootstrap/ng-bootstrap'; 
 
 import {  } from 'rxjs';
+import { AddArtComponent } from '../add-art/add-art.component';
 
 
 @Component({
@@ -62,7 +64,7 @@ export class ProfileComponent implements OnInit {
   //[700, 800, 807].map((n) => `https://picsum.photos/id/${n}/900/500`);
 
   constructor(private authService:AuthService,  private router:Router, config: NgbCarouselConfig,
-    private _autofill: AutofillMonitor) {
+    private _autofill: AutofillMonitor, public dialog: MatDialog) {
     // 
     config.interval = 2000;
     config.keyboard = true;
@@ -74,6 +76,17 @@ export class ProfileComponent implements OnInit {
   
   ngAfterViewInit() {
     
+  }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AddArtComponent, {
+      width: '250px',
+      data: {}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    
+    });
   }
   
     

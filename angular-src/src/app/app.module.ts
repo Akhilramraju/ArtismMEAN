@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {MatDialogModule,MatDialogRef,MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -72,15 +72,18 @@ const appRoutes: Routes = [
     CommonModule,
     AppRoutingModule,
     FormsModule,
+    MatDialogModule,
     ReactiveFormsModule,
-    
+  
     HttpClientModule, JwtModule.forRoot(JWT_Module_Options),
     Ng2CarouselamosModule,
 
     RouterModule.forRoot(appRoutes),
    // FlashMessagesModule
     ],
-  providers: [ValidateService,AuthService,AuthGuard,NgbCarouselConfig,ArtService],
-  bootstrap: [AppComponent]
+  providers: [ValidateService,AuthService,AuthGuard,NgbCarouselConfig,ArtService, 
+  {provide: MatDialogRef,
+    useValue: {}},  { provide: MAT_DIALOG_DATA, useValue: {} },],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
