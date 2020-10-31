@@ -61,7 +61,7 @@ export class AuthService {
 
     
   const helper = new JwtHelperService();
-  console.log("logged in :",!helper.isTokenExpired(localStorage.id_token));  
+  console.log("logged in service:",!helper.isTokenExpired(localStorage.id_token));  
     return !helper.isTokenExpired(localStorage.id_token); // other people are putting 'id_token'' here but it didn't work for me so i just put the localStorage item
     }
    

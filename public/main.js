@@ -812,7 +812,7 @@ class AuthService {
     }
     loggedIn() {
         const helper = new _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_3__["JwtHelperService"]();
-        console.log("logged in :", !helper.isTokenExpired(localStorage.id_token));
+        console.log("logged in service:", !helper.isTokenExpired(localStorage.id_token));
         return !helper.isTokenExpired(localStorage.id_token); // other people are putting 'id_token'' here but it didn't work for me so i just put the localStorage item
     }
 }
@@ -930,7 +930,7 @@ _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["platformBrowser"]().boot
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\vasud\OneDrive\Desktop\JS\angularExpress\ArtMean\angular-src\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/Akhil/workspace/JS/ArtismMEAN/angular-src/src/main.ts */"./src/main.ts");
 
 
 /***/ })

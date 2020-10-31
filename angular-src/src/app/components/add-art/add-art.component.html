@@ -1,0 +1,38 @@
+
+<!--Here I need to add the arts-->
+<div>
+<form [formGroup]="addArtForm" (ngSubmit)="submit()">
+         
+    <div class="form-group">
+        <!-- art description-->
+        <label for="artDesc">Art Description</label>
+        <input 
+            formControlName="artDescription"
+            id="artDescription" 
+            type="text" 
+            class="form-control">
+        <div *ngIf="f.artDescription && f.artDescription.invalid" class="alert alert-danger">
+            <div *ngIf="f.artDescription.errors.required">Art Description is required.</div>
+            <div *ngIf="f.artDescription.errors.maxlength">Art Desc should be less than 30 character.</div>
+        </div>
+    </div>
+   
+    <div class="form-group">
+        <label for="file">File</label>
+        <input 
+            formControlName="file"
+            id="file" 
+            type="file" 
+            class="form-control"
+            multiple="" 
+            (change)="onFileChange($event)">
+        <div *ngIf="f.file.touched && f.file.invalid" class="alert alert-danger">
+            <div *ngIf="f.file.errors.required">File is required.</div>
+        </div>
+    </div>
+   
+    <img *ngFor='let url of images'  [src]="url" height="150" width="200px" style="margin: 3px;"> <br/>
+       
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+</div>

@@ -1,0 +1,16 @@
+.home-arts-tiles{
+    width: 300px;
+    height: 20px;
+}
+.home{
+   
+    background-position:center;
+    background-size:cover;
+    background-color: mistyrose;
+  
+
+    -webkit-font-smoothing: antialiased;
+    font: normal 14px Roboto,arial,sans-serif;
+    font-family: 'Dancing Script', cursive!important;
+  }
+  

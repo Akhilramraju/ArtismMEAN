@@ -1,7 +1,218 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
+    <link rel="stylesgeet" href="https://rawgit.com/creativetimofficial/material-kit/master/assets/css/material-kit.css">
+
+<div>
+
+</div>
+<div class="profile-page" >
+  
+    
+    <div class="page-header header-filter" data-parallax="true" ></div>
+    <div class="main main-raised">
+		<div class="profile-content">
+            <div class="container">
+                <div class="row">
+	                <div class="col-md-6 ml-auto mr-auto" >
+        	           <div class="profile">
+	                        <div class="avatar">
+                            
+	                            <img src="assets/assets/img/Painter/download.jpg" alt="Circle Image" class="img-raised rounded-circle img-fluid">
+                   
+                              <div class="container con1" style=" background-color: beige; text-align: center;">
+                                <div class="row form-login1">
+                                  <div class="col">
+                                <h5 style="color:purple">I am : {{user.name}}</h5 >
+                                     <h5 style="color:salmon">Find me as : {{user.username}}</h5 >
+                                  <h5 style="color:skyblue"> Contact me @ : {{user.email}}</h5 ></div>
+                            </div>
+                            </div>
+                            </div>
+                           
+	                    
+	                    </div>
+    	            </div>
+                </div>
+                <br>
+              <div class="container con" style=" background-color: mistyrose;">
+                <div class="row form-login">
+                  <div class="col-md-6"></div>
+                  <h3 style="color:navy" >My arts</h3>
+                </div>
+              </div>
+              <br>
+              <div>
+                <app-add-art></app-add-art>
+              </div>
+
+                <div>
+                  <app-profile-art></app-profile-art>
+                </div>
+      </div>
+      </div>
+  
+        </div>
+	</div>
+	
+	<footer class="footer text-center ">
+  <p> Footer</p>
+  </footer>
+   
+
+<!--actual-->
 <div *ngIf="user">
-    <h2 class ="page-header">{{user.name}}</h2>
-    <ul class = "list-group">
-        <li class = "list-group-item">Username: {{user.username}}</li>
-        <li class = "list-group-item">Username: {{user.email}}</li>
-    </ul>
+
+  <br>
+
+
+
+<!--Here is the cover picture for the profile-->
+
+<!-- 
+<div >
+
+<div>
+
+  <div class="container-fluid"  >
+    <div class="row content rowCon">
+      
+      <div class="col-sm-3 sidenav introDesc" >
+     
+          
+        <h4>Marie</h4>
+        <h3>I am a Musician</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        </p>
+        <br>
+      </div>
+        
+      </div>
+  
+      <div class="col ">
+        
+        <div class="row" >
+          <div class="introPic">
+          <img class="img-fluid" style="height: 400px;" alt="Responsive image" src="assets/assets/img/hero-bg.jpg" >
+        </div>
+     
+      </div>
+    </div>
+  </div>
+
+
+
+
+<br>
+
+
+
+
+    </div>
+  
+
+  
+
+
+
+
+<!--Intro ends here-->
+
+
+
+<!--Here is the adding art form-->
+
+
+
+
+
+
+ <!-- 
+
+    <div id ="carousel">
+       <!-- <img [src]="images[0]" alt="slide" >-->
+<!--
+       <li *ngFor="let i of image">
+
+        <p>{{image[i]}}</p>
+ 
+     <img src="i[0]" alt=""> 
+    </li>
+       <ngb-carousel *ngIf="images">
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img [src]="this.images[0]" alt="Random first slide">
+          </div>
+          <div class="carousel-caption">
+            <h3>First slide label</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+           
+          </div>
+          <div class="carousel-caption">
+            <h3>Second slide label</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img [src]="images[2]" alt="Random third slide">
+          </div>
+          <div class="carousel-caption">
+            <h3>Third slide label</h3>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    -->
+      <!--  <div class="container-fluid">
+            <h1>
+            Angular 10 Carousel Example
+            </h1>
+            <h2>Full tutorial in Techiediaries</h2>
+            <ngb-carousel *ngIf="images">
+              <ng-template ngbSlide>
+                <div class="wrapper">
+                  <img [src]="images[0]" alt="Random first slide">
+                </div>
+                <div class="carousel-caption">
+                  <h3>First Slide</h3>
+                  <p> Angular 10 Carousel Example </p>
+                </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <div class="wrapper">
+                  <img [src]="images[1]" alt="Random second slide">
+                </div>
+                <div class="carousel-caption">
+                  <h3>Second Slide</h3>
+                  <p> Check out Techiediaries</p>
+                </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <div class="wrapper">
+                  <img [src]="images[2]"  alt="Random third slide">
+                </div>
+                <div class="carousel-caption">
+                  <h3>Third Slide</h3>
+                  <p>for full tutorial...</p>
+                </div>
+              </ng-template>
+            </ngb-carousel>
+            </div> 
+
+    </div>  -->
+
+
 </div>

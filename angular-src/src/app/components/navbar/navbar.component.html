@@ -24,10 +24,15 @@
         <strong>Artism</strong>
       </a>    
       
-        <a routerLink="/" routerLinkActive="active" routerLinkOptions="true" class="text-white">Home</a>
+       <!-- <a  *ngIf="authService.loggedIn()" routerLink="/viewProfile" routerLinkActive="active" routerLinkOptions="true" class="text-white">View Profile</a>
+       
+         <a routerLink="/" routerLinkActive="active" routerLinkOptions="true" class="text-white">Home</a>-->
         <a  *ngIf="authService.loggedIn()"  routerLink="/profile" routerLinkActive="active" routerLinkOptions="true" class="text-white">Profile</a>
         <a *ngIf="!authService.loggedIn()" routerLink="/register" routerLinkActive="active"  routerLinkOptions="true" class="text-white">Register</a>
         <a  *ngIf="!authService.loggedIn()" routerLink="/login" routerLinkActive="active" routerLinkOptions="true" class="text-white">Login</a>
+        <a  *ngIf="authService.loggedIn()" routerLink="/artsHome" routerLinkActive="active" routerLinkOptions="true" class="text-white">Home</a>
+        <a  *ngIf="authService.loggedIn()" routerLink="/editProfile" routerLinkActive="active" routerLinkOptions="true" class="text-white">Edit Profile</a>
+        
         <a  *ngIf="authService.loggedIn()" (click) = "onLogoutClick()" href="#">Logout</a>
    
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">

@@ -24,7 +24,7 @@ password: String;
       console.log("user data :",data);
       if((data as any).success){
         this.authService.storeUserData((data as any).token,(data as any).user);
-        this.router.navigate(["profile"]);
+        this.router.navigate(["artsHome"]);
         }
         else{
           this.router.navigate(["login"]);

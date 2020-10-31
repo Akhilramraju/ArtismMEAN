@@ -1,3 +1,4 @@
+<!--
 <div class="container text-center">
 <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
     <form (submit)="OnRegisterSubmit()" class="php-email-form">
@@ -35,3 +36,91 @@
     </form>
   </div>
 </div>
+
+-->
+<!-- Register new-->
+
+<div class="login">
+
+  <!-- Page Content -->
+  <div class="container">
+      <div class="row">
+          <div class="col-md-offset-5 col-md-4 text-center">
+              <h1 class='text-white'>Artism Registration!</h1>
+  
+              <div class="form-login">
+
+              <!--form starts here-->
+              <form (submit)="OnRegisterSubmit()" class="php-email-form">
+                <h4 class="text-white">Please fill your details!</h4>
+              
+              
+        
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name"  placeholder="Name"  class="form-control input-sm chat-input text-white" id="name" [(ngModel)]="name" 
+                     />
+                </div>
+                    
+                  <div class="form-group">
+                      <label for="name">Username</label>
+                      <input type="text" name="name" placeholder="Username"   class="form-control input-sm chat-input" id="username" [(ngModel)]="username" 
+                      />
+                    </div>
+                    
+                  <div class="form-group">
+                    <label for="name">Your Email</label>
+                    <input type="text" name="name" placeholder="Email"   class="form-control input-sm chat-input" id="email" [(ngModel)]="email" 
+                    />
+                    
+                  </div>
+               
+                <div class="form-group">
+                  <label for="name">Password</label>
+                  <input type="password" name="name" placeholder="Password"   class="form-control input-sm chat-input" id="password" [(ngModel)]="password" 
+                  />
+                </div>
+              
+              
+              <div ><button class="btn btn-danger btn-md" type="submit">Register</button></div>
+            </form>
+
+          </div>
+              <!--Form ends here-->
+
+
+
+
+  
+  <!--
+                <div class="form-login">
+                  <h4>Please Login</h4>
+                  <form (submit)="OnLoginSubmit()">
+                      <div class ="form-group">
+                          <label>Username</label>
+                          <input type="text" class="form-control input-sm chat-input" placeholder="username"  [(ngModel)]="username" name ="Username">
+                          
+                      </div>
+                      <div class ="form-group">
+                          <label>Password</label>
+                          <input type="password" class="form-control input-sm chat-input" placeholder="password" [(ngModel)]="password" name ="password">
+                      </div>
+                      <input type="submit" class="btn btn-danger btn-md" value = "login">    
+                  </form>
+  
+  
+  
+                 
+                
+                 
+              </div>
+              -->
+          </div>
+      </div>
+      <br>
+      <!--footer-->
+   
+      <!--//footer-->
+  </div>
+  
+  </div>

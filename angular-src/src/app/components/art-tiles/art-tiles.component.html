@@ -1,0 +1,43 @@
+
+<div class="art-tiles">
+<!-- Need to send data with an id-->
+<div >
+
+
+    <!-- Rotating card -->
+<div class="card-wrapper" >
+    <div id="card-1" class="card card-rotating text-center">
+  
+      <!-- Front Side -->
+      <div class="face front">
+  
+        <!-- Image-->
+        <div class="card-up">
+          <img class="card-img-top" src="{{art.cover}}" alt="Image with a photo of clouds." >
+        </div>
+  
+        <!-- Avatar -->
+        <div class="avatar mx-auto white"><img src={{art.thumbnail}} class="rounded-circle"
+            alt="Sample avatar image." style="height: 150px;">
+        </div>
+  
+        <!-- Content -->
+        <div class="card-body">
+            <a   routerLink="/viewProfile" routerLinkActive="active" routerLinkOptions="true" class="text-center">{{art.artistName}}</a>
+            <p>{{art.artDescription}}</p>
+            <button class="btn btn-primary" (click)="followArtist()">Follow</button>
+           
+          <!--<h4 class="font-weight-bold mb-3">Marie Johnson</h4>-->
+
+          <!-- Triggering button -->
+        </div>
+      </div>
+      <!-- Front Side -->
+  
+     
+  
+    </div>
+  </div>
+  <!-- Rotating card -->
+</div>
+</div>
